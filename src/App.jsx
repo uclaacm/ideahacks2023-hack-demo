@@ -24,7 +24,6 @@ function App() {
 			<p>To be implemented :)</p>
 
 			<button onClick={() => getCollectionDocs('animals')}>Print Docs...</button>
-			{/* {currAnimals.map(animal => <div>{animal.animal}</div>)} */}
 		</div>
 	);
 }
