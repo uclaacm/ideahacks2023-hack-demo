@@ -17,6 +17,18 @@ function App() {
 		});
 	}
 
+	async function getDocByName(collectionName, documentName) {
+		const docRef = doc(db, collectionName, documentName);
+		const snapshot = await getDoc(docRef);
+		if (snapshot.empty) {
+		  console.log('No matching documents.');
+		  return null;
+		}  
+
+    	const data = snapshot.data();
+		console.log(data);
+	}
+
 	return (
 		<div>
 			<h1>Strovo</h1>
