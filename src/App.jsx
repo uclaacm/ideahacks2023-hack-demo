@@ -1,12 +1,17 @@
 import React from 'react';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Profile from './components/Profile';
 
 function App() {
 	return (
-		<div>
-			<h1>Strovo</h1>
-			<p>A completely original idea for a running mileage tracker</p>
-			<p>To be implemented :)</p>
+		<div className='App'>
+			<Navbar />
+			<Routes>
+				<Route path='/' element={<Home />} />
+				<Route path='/profile' element={<Profile />} />
+			</Routes>
 		</div>
 	);
 }

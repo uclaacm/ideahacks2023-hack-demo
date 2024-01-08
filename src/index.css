@@ -1,3 +1,10 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Reem Kufi', sans-serif !important;
+}
+
 :root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
@@ -9,24 +16,46 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-a {
-	font-weight: 500;
-	color: #646cff;
-	text-decoration: inherit;
-}
-a:hover {
-	color: #535bf2;
-}
-
 body {
-	margin: 0;
-	display: flex;
-	place-items: center;
-	min-width: 320px;
-	min-height: 100vh;
+	max-width: 100%;
 }
 
-h1 {
-	font-size: 3.2em;
-	line-height: 1.1;
+h1,
+h2 {
+	color: white;
+}
+
+.App {
+	background-color: blue;
+}
+
+.navbar {
+	background-color: orange;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 15px 30px;
+}
+
+.link-container {
+	display: flex;
+	align-items: center;
+}
+
+.link-container-child {
+	margin-left: 20px;
+	padding: 5px 10px;
+	border-radius: 10px;
+	transition: 0.3s ease-in-out;
+}
+
+.link-container-child:hover {
+	cursor: pointer;
+	background-color: #b6930b;
+}
+
+.link-container-child a {
+	text-decoration: none;
+	color: white;
+	font-weight: 600;
 }
