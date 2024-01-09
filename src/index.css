@@ -49,6 +49,11 @@ button:hover {
 	color: white;
 }
 
+ul
+{
+	margin-left: 20px;
+}
+
 .link-container {
 	display: flex;
 	align-items: center;

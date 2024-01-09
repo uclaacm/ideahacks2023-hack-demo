@@ -1,15 +1,35 @@
 import React, { useState } from 'react';
+import { createNewDoc } from '../firebaseHelper';
 
-export default function CreatePost() {
+export default function CreatePost({
+	callback,
+	person
+}) {
 	const [title, setTitle] = useState('');
 	const [distance, setDistance] = useState('');
 	const [duration, setDuration] = useState('');
 	const [averagePace, setAveragePace] = useState('');
-	const [location, setLocation] = useState('');
+	const [locations, setLocations] = useState('');
 	const [notes, setNotes] = useState('');
 
 	function postRun() {
-		console.log('hello');
+		createNewDoc({
+			'person': person,
+			'title': title, 
+			'distance': distance, 
+			'duration': duration, 
+			'averagePace': averagePace, 
+			'locations': locations.split(',').map(location => location.trim()), 
+			'notes': notes
+		});
+		setTitle('');
+		setDistance('');
+		setDuration('');
+		setAveragePace('');
+		setLocations('');
+		setNotes('');
+		
+		callback();
 	}
 
 	return (
@@ -47,8 +67,8 @@ export default function CreatePost() {
 					/>
 					<input
 						type='text'
-						value={location}
-						onChange={(e) => setLocation(e.target.value)}
+						value={locations}
+						onChange={(e) => setLocations(e.target.value)}
 					/>
 					<input
 						type='text'
