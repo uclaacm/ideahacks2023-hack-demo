@@ -1,7 +1,7 @@
 import React from 'react';
 import RunPost from './RunPost';
 
-const exampleData = [
+export const exampleData = [
 	{
 		title: 'Morning Run',
 		person: 'John Doe',

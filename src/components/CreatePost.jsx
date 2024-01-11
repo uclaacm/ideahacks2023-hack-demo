@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { exampleData } from './Home';
 
-export default function CreatePost() {
+export default function CreatePost({ name }) {
 	const [title, setTitle] = useState('');
 	const [distance, setDistance] = useState('');
 	const [duration, setDuration] = useState('');
@@ -9,7 +10,21 @@ export default function CreatePost() {
 	const [notes, setNotes] = useState('');
 
 	function postRun() {
-		console.log('hello');
+		exampleData.push({
+			'person': name,
+			'title': title, 
+			'distance': distance, 
+			'duration': duration, 
+			'averagePace': averagePace, 
+			'location': location, 
+			'notes': notes
+		});
+		setTitle('');
+		setDistance('');
+		setDuration('');
+		setAveragePace('');
+		setLocation('');
+		setNotes('');
 	}
 
 	return (

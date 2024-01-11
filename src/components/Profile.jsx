@@ -1,31 +1,22 @@
 import React from 'react';
 import CreatePost from './CreatePost';
 import RunPost from './RunPost';
+import { exampleData } from './Home';
 
-const exampleData = [
-	{
-		title: 'Morning Run',
-		person: 'John Doe',
-		distance: '5 miles',
-		duration: '30 minutes',
-		averagePace: '6:00',
-		location: 'San Francisco, CA',
-		notes: 'Great run!'
-	}
-];
+const PERSON_NAME = "John Doe"
 
 export default function Profile() {
 	return (
 		<div className='profile'>
-			<h1>Welcome, name</h1>
+			<h1>Welcome, {PERSON_NAME}</h1>
 			<div className='create-post-container'>
 				<h2>Post a run:</h2>
-				<CreatePost />
+				<CreatePost name={PERSON_NAME} />
 			</div>
 			<br />
 			<h2>My Runs</h2>
 			<div className='my-runs'>
-				{exampleData.map((run, idx) => (
+				{exampleData.filter((run) => run.person === PERSON_NAME).map((run, idx) => (
 					// Not specifying "person" because the person is the user
 					<RunPost
 						title={run.title}
