@@ -8,7 +8,7 @@ export const exampleData = [
 		distance: '5 miles',
 		duration: '30 minutes',
 		averagePace: '6:00',
-		location: 'San Francisco, CA',
+		locations: ['San Francisco, CA'],
 		notes: 'Great run!'
 	},
 	{
@@ -17,7 +17,7 @@ export const exampleData = [
 		distance: '10 miles',
 		duration: '1 hour',
 		averagePace: '6:00',
-		location: 'San Francisco, CA',
+		locations: ['Bellevue', 'Kirkland'],
 		notes: 'Felt awful but powered through.'
 	}
 ];
@@ -32,7 +32,7 @@ export default function Home() {
 					distance={run.distance}
 					duration={run.duration}
 					averagePace={run.averagePace}
-					location={run.location}
+					locations={run.locations}
 					notes={run.notes}
 					key={idx}
 				/>

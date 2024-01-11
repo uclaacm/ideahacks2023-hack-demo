@@ -23,7 +23,7 @@ export default function Profile() {
 						distance={run.distance}
 						duration={run.duration}
 						averagePace={run.averagePace}
-						location={run.location}
+						locations={run.locations}
 						notes={run.notes}
 						key={idx}
 					/>

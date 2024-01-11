@@ -6,7 +6,7 @@ export default function CreatePost({ name }) {
 	const [distance, setDistance] = useState('');
 	const [duration, setDuration] = useState('');
 	const [averagePace, setAveragePace] = useState('');
-	const [location, setLocation] = useState('');
+	const [locations, setLocations] = useState([]);
 	const [notes, setNotes] = useState('');
 
 	function postRun() {
@@ -16,14 +16,14 @@ export default function CreatePost({ name }) {
 			'distance': distance, 
 			'duration': duration, 
 			'averagePace': averagePace, 
-			'location': location, 
+			'locations': locations.split(',').map((location) => location.trim()), 
 			'notes': notes
 		});
 		setTitle('');
 		setDistance('');
 		setDuration('');
 		setAveragePace('');
-		setLocation('');
+		setLocations('');
 		setNotes('');
 	}
 
@@ -36,7 +36,7 @@ export default function CreatePost({ name }) {
 					<h3>Distance</h3>
 					<h3>Duration</h3>
 					<h3>Average Pace</h3>
-					<h3>Location</h3>
+					<h3>Locations</h3>
 					<h3>Notes</h3>
 				</div>
 				<div className='create-post-inputs'>
@@ -62,8 +62,8 @@ export default function CreatePost({ name }) {
 					/>
 					<input
 						type='text'
-						value={location}
-						onChange={(e) => setLocation(e.target.value)}
+						value={locations}
+						onChange={(e) => setLocations(e.target.value)}
 					/>
 					<input
 						type='text'

@@ -32,6 +32,10 @@ button {
 	cursor: pointer;
 }
 
+ul {
+	padding-left: 20px;
+}
+
 button:hover {
 	background-color: #b6930b;
 }
